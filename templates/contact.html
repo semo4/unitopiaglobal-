@@ -26,12 +26,18 @@
                         <div class="col-md-6 col-lg-7">
                             <p class="mb-4 text-dark">Reach out to our team with any questions. We're here to help.</p>
                             <p class="mb-4 text-dark">Note: Any Data Entered here is confidential and only will use for Contacting The Client.</p>
-                            <form action="mailto:admin@unitopiaglobal.com" method="post" enctype="text/plain">
+                            <form id="contactForm" action="https://formsubmit.co/admin@unitopiaglobal.com" method="POST">
+                                <!-- FormSubmit Configuration -->
+                                <input type="hidden" name="_subject" value="New Student Application - Unitopia Global">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                                
+                                <!-- Your Form Fields -->
                                 <input type="text" name="name" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Your Name" required>
                                 <input type="email" name="email" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Enter Your Email" required>
                                 <input type="text" name="phone" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Enter Your Phone" required>
                                 <input type="text" name="field_of_study" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Field of Study">
-                                <select name="country" class="w-100 form-control p-3 mb-4 border-primary bg-light" aria-label="Default select example">
+                                <select name="country" class="w-100 form-control p-3 mb-4 border-primary bg-light" aria-label="Default select example" required>
                                     <option value="" selected>Select Country</option>
                                     <option value="USA">United States</option>
                                     <option value="UK">United Kingdom</option>
@@ -41,15 +47,82 @@
                                     <option value="Australia">Australia</option>
                                     <option value="Netherlands">Netherlands</option>
                                 </select>
-                                <select name="degree" class="w-100 form-control p-3 mb-4 border-primary bg-light" aria-label="Default select example">
+                                <select name="degree" class="w-100 form-control p-3 mb-4 border-primary bg-light" aria-label="Default select example" required>
                                     <option value="" selected>Select Degree</option>
                                     <option value="Bachelor">Bachelor</option>
                                     <option value="Master's">Master's</option>
                                     <option value="English courses">English courses</option>
                                 </select>
                                 <textarea name="message" class="w-100 form-control mb-4 p-3 border-primary bg-light" rows="4" cols="10" placeholder="Your Message"></textarea>
+                                
+                                <!-- Success/Error Messages -->
+                                <div id="formMessage" class="alert d-none mb-4"></div>
+                                
                                 <button class="w-100 btn btn-primary form-control p-3 border-primary bg-primary rounded-pill" type="submit">Reach Out</button>
                             </form>
+
+                            <script>
+                            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                                e.preventDefault();
+                                
+                                const form = this;
+                                const submitBtn = form.querySelector('button[type="submit"]');
+                                const messageDiv = document.getElementById('formMessage');
+                                const originalText = submitBtn.textContent;
+                                
+                                // Reset message
+                                messageDiv.classList.add('d-none');
+                                messageDiv.textContent = '';
+                                
+                                // Add loading state
+                                submitBtn.textContent = 'Sending...';
+                                submitBtn.disabled = true;
+                                
+                                // Create FormData object
+                                const formData = new FormData(form);
+                                
+                                // Send form data using fetch API
+                                fetch(form.action, {
+                                    method: 'POST',
+                                    body: formData,
+                                    headers: {
+                                        'Accept': 'application/json'
+                                    }
+                                })
+                                .then(response => {
+                                    if (response.ok) {
+                                        // Success message
+                                        showMessage('Thank you! Your application has been submitted successfully.', 'success');
+                                        form.reset();
+                                    } else {
+                                        throw new Error('Form submission failed');
+                                    }
+                                })
+                                .catch(error => {
+                                    // Error message
+                                    showMessage('Sorry, there was an error submitting your form. Please try again or contact us directly.', 'danger');
+                                    console.error('Form submission error:', error);
+                                })
+                                .finally(() => {
+                                    // Reset button state
+                                    submitBtn.textContent = originalText;
+                                    submitBtn.disabled = false;
+                                });
+                                
+                                function showMessage(text, type) {
+                                    messageDiv.textContent = text;
+                                    messageDiv.className = `alert alert-${type}`;
+                                    messageDiv.classList.remove('d-none');
+                                    
+                                    // Auto-hide success message after 5 seconds
+                                    if (type === 'success') {
+                                        setTimeout(() => {
+                                            messageDiv.classList.add('d-none');
+                                        }, 5000);
+                                    }
+                                }
+                            });
+                            </script>
                         </div>
                         <div class="col-md-6 col-lg-5">
                             <div>

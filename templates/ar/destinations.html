@@ -1,0 +1,195 @@
+{% include 'ar/header.html'%}
+<!-- Hero Start -->
+
+<div class="container-fluid bg-light py-6 my-6 mt-0" dir="rtl" lang="ar">
+  <div class="container-fluid position-relative" style="min-height: 400px">
+    <img
+      src="../static/img/world.jpg"
+      alt=""
+      style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        opacity: 0.3;
+        border-radius: 1rem;
+      "
+    />
+    <div
+      class="row g-5 align-items-center justify-content-center position-absolute top-50 start-50 translate-middle"
+      style="z-index: 2; width: 100%"
+    >
+      <div class="col-lg-7 col-md-12 mx-auto text-center py-5">
+        <h1 class="display-1 mb-4 animated bounceInDown">الوجهات</h1>
+        <ol
+          class="breadcrumb justify-content-center mb-0 animated bounceInDown"
+        >
+          <li class="breadcrumb-item">
+            خريطة لجميع الأماكن التي يمكنك الذهاب إليها
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Hero End -->
+
+<!-- Destinations Map Start -->
+<div class="container-fluid blog py-6" dir="rtl" lang="ar">
+  <div class="container">
+    <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+      <small
+        class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3"
+      >
+        وجهاتنا حول العالم
+      </small>
+    </div>
+    <div class="destinations-map-wrapper">
+      <img
+        class="destinations-map-img"
+        src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
+        alt="خريطة العالم"
+      />
+      <!-- Pins with improved positions and size -->
+      <!-- United States -->
+      <a href="/us" class="map-pin" style="left: 17.5%; top: 25%">
+        <div class="map-pin-icon">أمريكا</div>
+        <div class="map-pin-tail"></div>
+        <div class="map-pin-tooltip">الولايات المتحدة</div>
+      </a>
+      <!-- Saudi Arabia -->
+      <a href="/ksa" class="map-pin" style="left: 58.5%; top: 33%">
+        <div class="map-pin-icon">السعودية</div>
+        <div class="map-pin-tail"></div>
+        <div class="map-pin-tooltip">المملكة العربية السعودية</div>
+      </a>
+      <!-- SPAIN -->
+      <a href="/spain" class="map-pin" style="left: 44.5%; top: 27%">
+        <div class="map-pin-icon">إسبانيا</div>
+        <div class="map-pin-tail"></div>
+        <div class="map-pin-tooltip">إسبانيا</div>
+      </a>
+      <!-- NETHERLANDS -->
+      <a href="/netherlands" class="map-pin" style="left: 47.5%; top: 18%">
+        <div class="map-pin-icon">هولندا</div>
+        <div class="map-pin-tail"></div>
+        <div class="map-pin-tooltip">هولندا</div>
+      </a>
+      <!-- TURKEY -->
+      <a href="/turkey" class="map-pin" style="left: 55%; top: 26%">
+        <div class="map-pin-icon">تركيا</div>
+        <div class="map-pin-tail"></div>
+        <div class="map-pin-tooltip">تركيا</div>
+      </a>
+      <!-- Canada -->
+      <a href="/canada" class="map-pin" style="left: 16.5%; top: 10%">
+        <div class="map-pin-icon">كندا</div>
+        <div class="map-pin-tail"></div>
+        <div class="map-pin-tooltip">كندا</div>
+      </a>
+      <!-- United Kingdom -->
+      <a href="/uk" class="map-pin" style="left: 44.5%; top: 18%">
+        <div class="map-pin-icon">بريطانيا</div>
+        <div class="map-pin-tail"></div>
+        <div class="map-pin-tooltip">المملكة المتحدة</div>
+      </a>
+      <!-- Australia -->
+      <a href="/australia" class="map-pin" style="left: 84%; top: 60%">
+        <div class="map-pin-icon">أستراليا</div>
+        <div class="map-pin-tail"></div>
+        <div class="map-pin-tooltip">أستراليا</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .destinations-map-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .destinations-map-img {
+    width: 100%;
+    min-height: 600px;
+    border-radius: 12px;
+    background: #0e1d30;
+    object-fit: cover;
+  }
+
+  .map-pin {
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: z-index 0.2s;
+    font-family: "Tajawal", "Cairo", Arial, sans-serif;
+  }
+
+  .map-pin:hover,
+  .map-pin:focus {
+    z-index: 10;
+  }
+
+  .map-pin-icon {
+    width: 48px;
+    height: 48px;
+    background: #a29169;
+    border: 4px solid #0e1d30;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0e1d30;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 0 12px #a29169;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    direction: rtl;
+  }
+
+  .map-pin-tail {
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 20px solid #a29169;
+    margin-top: -4px;
+  }
+
+  .map-pin-tooltip {
+    display: none;
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0e1d30;
+    color: #a29169;
+    padding: 8px 18px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: 500;
+    z-index: 20;
+    box-shadow: 0 2px 8px rgba(14, 29, 48, 0.15);
+    pointer-events: none;
+    direction: rtl;
+    text-align: center;
+  }
+
+  .map-pin:hover .map-pin-tooltip,
+  .map-pin:focus .map-pin-tooltip {
+    display: block;
+  }
+</style>
+
+{% include 'ar/footer.html' %}

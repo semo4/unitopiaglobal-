@@ -1,0 +1,650 @@
+{% include 'ar/header.html'%}
+
+<div
+  class="container-fluid bg-primary py-6 my-6 mt-0 position-relative"
+  dir="rtl"
+  lang="ar"
+>
+  <div class="container pb-5 custom">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-7 col-md-12 mb-4 mb-lg-0">
+        <small
+          class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-4 animated bounceInDown"
+        >
+          مرحبًا بكم في يوني توبيا جلوبال
+        </small>
+        <h1
+          class="display-1 mb-4 animated bounceInDown"
+          style="text-align: right"
+        >
+          طريقك. مهمتنا.
+        </h1>
+        <a
+          href="/contact-ar"
+          class="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 animated bounceInLeft"
+          >ابدأ رحلتك</a
+        >
+      </div>
+      <div class="col-lg-5 col-md-12">
+        <div class="text-center text-lg-start">
+          <img
+            src="../static/img/main.png"
+            class="img-fluid rounded animated zoomIn"
+            alt=""
+            style="max-width: 100%; height: auto"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Wave animation positioned below the content -->
+  <div class="wave-bottom-center">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1000 500"
+      preserveAspectRatio="none"
+    >
+      <path
+        class="elementor-shape-fill"
+        transform="scale(-1,1) translate(-1000,0)"
+        d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"
+      ></path>
+    </svg>
+  </div>
+</div>
+<!-- Service Start -->
+<div class="container-fluid blog py-6" dir="rtl" lang="ar">
+  <div class="container">
+    <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+      <small
+        class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3"
+        >خدماتنا</small
+      >
+      <h1 class="display-5 mb-5">الخدمات الأساسية</h1>
+    </div>
+    <div class="row gx-4 justify-content-center">
+      <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s">
+        <div class="blog-item">
+          <div class="overflow-hidden rounded">
+            <img src="../static/img/start.jpg" class="img-fluid w-100" alt="" />
+          </div>
+          <div
+            class="blog-content mx-4 d-flex flex-column align-items-center rounded bg-light"
+          >
+            <div class="text-dark bg-primary rounded mb-3 w-100">
+              <div
+                class="h-100 p-3 d-flex flex-column justify-content-center text-center"
+              >
+                <p class="fw-bold mb-0">الاستشارات التعليمية</p>
+              </div>
+            </div>
+            <p class="mb-4 text-center px-3 py-2"></p>
+            <a
+              href="/service-ar"
+              class="btn btn-primary py-2 px-4 rounded-pill mx-auto px-3 py-2 mb-3"
+              >ابدأ رحلتك</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.3s">
+        <div class="blog-item">
+          <div class="overflow-hidden rounded">
+            <img
+              src="../static/img/training-2.jpg"
+              class="img-fluid w-100"
+              alt=""
+            />
+          </div>
+          <div
+            class="blog-content mx-4 d-flex flex-column align-items-center rounded bg-light"
+          >
+            <div class="text-dark bg-primary rounded mb-3 w-100">
+              <div
+                class="h-100 p-3 d-flex flex-column justify-content-center text-center"
+              >
+                <p class="fw-bold mb-0">التدريب</p>
+              </div>
+            </div>
+            <p class="mb-4 text-center px-3 py-2"></p>
+            <a
+              href="/contact-ar"
+              class="btn btn-primary py-2 px-4 rounded-pill mx-auto px-3 py-2 mb-3"
+              >قدّم الآن</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="container-fluid blog py-3 bg-primary"
+  style="
+    opacity: 0.9;
+    border-top-left-radius: 80%;
+    border-top-right-radius: 80%;
+  "
+  dir="rtl"
+  lang="ar"
+>
+  <div class="container">
+    <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+      <small
+        class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3"
+        >أحدث الدول
+      </small>
+      <h1 class="display-5 mb-5">الوجهات</h1>
+    </div>
+    <!-- Modified to use flex for inline display with smooth scrolling -->
+    <div
+      class="d-flex flex-row-reverse flex-nowrap overflow-hidden scroll-container pb-3"
+      id="destinationsScroll"
+      style="scroll-behavior: smooth; -webkit-overflow-scrolling: touch"
+    >
+      <!-- USA -->
+      <div
+        class="mx-2 destination-card"
+        style="min-width: 280px; max-width: 280px; transition: all 0.5s ease"
+      >
+        <div class="blog-item position-relative">
+          <div class="overflow-hidden rounded" style="height: 400px">
+            <img
+              src="../static/img/UNITOPIA_Images/usa.png"
+              class="img-fluid w-100 h-100"
+              alt=""
+              style="object-fit: cover"
+            />
+          </div>
+          <!-- Flag image -->
+          <div
+            class="position-absolute"
+            style="top: 10px; left: 10px; z-index: 10"
+          >
+            <img
+              src="../static/img/UNITOPIA_Images/us-flag.png"
+              class="img-fluid rounded"
+              alt="علم الدولة"
+              style="
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border: 2px solid white;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+              "
+            />
+          </div>
+          <div
+            class="blog-content mx-4 d-flex flex-column align-items-center rounded bg-light"
+          >
+            <div class="text-white bg-primary-dark rounded mb-3 w-100">
+              <div
+                class="h-100 p-3 d-flex flex-column justify-content-center text-center"
+              >
+                <p class="fw-bold mb-0">الولايات المتحدة</p>
+              </div>
+            </div>
+            <a
+              href="/contact-ar"
+              class="btn btn-primary py-2 px-4 rounded-pill mx-auto mb-3"
+              >المزيد</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- SPAIN -->
+      <div
+        class="mx-2 destination-card"
+        style="min-width: 280px; max-width: 280px; transition: all 0.5s ease"
+      >
+        <div class="blog-item position-relative">
+          <div class="overflow-hidden rounded" style="height: 400px">
+            <img
+              src="../static/img/UNITOPIA_Images/spain.png"
+              class="img-fluid w-100 h-100"
+              alt=""
+              style="object-fit: cover"
+            />
+          </div>
+          <!-- Flag image -->
+          <div
+            class="position-absolute"
+            style="top: 10px; left: 10px; z-index: 10"
+          >
+            <img
+              src="../static/img/UNITOPIA_Images/spain-flag.png"
+              class="img-fluid rounded"
+              alt="علم الدولة"
+              style="
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border: 2px solid white;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+              "
+            />
+          </div>
+          <div
+            class="blog-content mx-4 d-flex flex-column align-items-center rounded bg-light"
+          >
+            <div class="text-white bg-primary-dark rounded mb-3 w-100">
+              <div
+                class="h-100 p-3 d-flex flex-column justify-content-center text-center"
+              >
+                <p class="fw-bold mb-0">إسبانيا</p>
+              </div>
+            </div>
+            <a
+              href="/contact-ar"
+              class="btn btn-primary py-2 px-4 rounded-pill mx-auto mb-3"
+              >المزيد</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- AUSTRALIA -->
+      <div
+        class="mx-2 destination-card"
+        style="min-width: 280px; max-width: 280px; transition: all 0.5s ease"
+      >
+        <div class="blog-item position-relative">
+          <div class="overflow-hidden rounded" style="height: 400px">
+            <img
+              src="../static/img/australia.jpg"
+              class="img-fluid w-100 h-100"
+              alt=""
+              style="object-fit: cover"
+            />
+          </div>
+          <!-- Flag image -->
+          <div
+            class="position-absolute"
+            style="top: 10px; left: 10px; z-index: 10"
+          >
+            <img
+              src="../static/img/UNITOPIA_Images/australia.png"
+              class="img-fluid rounded"
+              alt="علم الدولة"
+              style="
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border: 2px solid white;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+              "
+            />
+          </div>
+          <div
+            class="blog-content mx-4 d-flex flex-column align-items-center rounded bg-light"
+          >
+            <div class="text-white bg-primary-dark rounded mb-3 w-100">
+              <div
+                class="h-100 p-3 d-flex flex-column justify-content-center text-center"
+              >
+                <p class="fw-bold mb-0">أستراليا</p>
+              </div>
+            </div>
+            <a
+              href="/contact-ar"
+              class="btn btn-primary py-2 px-4 rounded-pill mx-auto mb-3"
+              >المزيد</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- UK -->
+      <div
+        class="mx-2 destination-card"
+        style="min-width: 280px; max-width: 280px; transition: all 0.5s ease"
+      >
+        <div class="blog-item position-relative">
+          <div class="overflow-hidden rounded" style="height: 400px">
+            <img
+              src="../static/img/UNITOPIA_Images/london.png"
+              class="img-fluid w-100 h-100"
+              alt=""
+              style="object-fit: cover"
+            />
+          </div>
+          <!-- Flag image -->
+          <div
+            class="position-absolute"
+            style="top: 10px; left: 10px; z-index: 10"
+          >
+            <img
+              src="../static/img/UNITOPIA_Images/uk-flag.png"
+              class="img-fluid rounded"
+              alt="علم الدولة"
+              style="
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border: 2px solid white;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+              "
+            />
+          </div>
+          <div
+            class="blog-content mx-4 d-flex flex-column align-items-center rounded bg-light"
+          >
+            <div class="text-white bg-primary-dark rounded mb-3 w-100">
+              <div
+                class="h-100 p-3 d-flex flex-column justify-content-center text-center"
+              >
+                <p class="fw-bold mb-0">المملكة المتحدة</p>
+              </div>
+            </div>
+            <a
+              href="/contact-ar"
+              class="btn btn-primary py-2 px-4 rounded-pill mx-auto mb-3"
+              >المزيد</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- CANADA -->
+      <div
+        class="mx-2 destination-card"
+        style="min-width: 280px; max-width: 280px; transition: all 0.5s ease"
+      >
+        <div class="blog-item position-relative">
+          <div class="overflow-hidden rounded" style="height: 400px">
+            <img
+              src="../static/img/UNITOPIA_Images/canada.png"
+              class="img-fluid w-100 h-100"
+              alt=""
+              style="object-fit: cover"
+            />
+          </div>
+          <!-- Flag image -->
+          <div
+            class="position-absolute"
+            style="top: 10px; left: 10px; z-index: 10"
+          >
+            <img
+              src="../static/img/UNITOPIA_Images/loo.png"
+              class="img-fluid rounded"
+              alt="علم الدولة"
+              style="
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border: 2px solid white;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+              "
+            />
+          </div>
+          <div
+            class="blog-content mx-4 d-flex flex-column align-items-center rounded bg-light"
+          >
+            <div class="text-white bg-primary-dark rounded mb-3 w-100">
+              <div
+                class="h-100 p-3 d-flex flex-column justify-content-center text-center"
+              >
+                <p class="fw-bold mb-0">كندا</p>
+              </div>
+            </div>
+            <a
+              href="/contact-ar"
+              class="btn btn-primary py-2 px-4 rounded-pill mx-auto mb-3"
+              >المزيد</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Turkey -->
+      <div
+        class="mx-2 destination-card"
+        style="min-width: 280px; max-width: 280px; transition: all 0.5s ease"
+      >
+        <div class="blog-item position-relative">
+          <div class="overflow-hidden rounded" style="height: 400px">
+            <img
+              src="../static/img/turkey.jpg"
+              class="img-fluid w-100 h-100"
+              alt=""
+              style="object-fit: cover"
+            />
+          </div>
+          <!-- Flag image -->
+          <div
+            class="position-absolute"
+            style="top: 10px; left: 10px; z-index: 10"
+          >
+            <img
+              src="../static/img/UNITOPIA_Images/turky-flag.png"
+              class="img-fluid rounded"
+              alt="علم الدولة"
+              style="
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border: 2px solid white;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+              "
+            />
+          </div>
+          <div
+            class="blog-content mx-4 d-flex flex-column align-items-center rounded bg-light"
+          >
+            <div class="text-white bg-primary-dark rounded mb-3 w-100">
+              <div
+                class="h-100 p-3 d-flex flex-column justify-content-center text-center"
+              >
+                <p class="fw-bold mb-0">تركيا</p>
+              </div>
+            </div>
+            <a
+              href="/contact-ar"
+              class="btn btn-primary py-2 px-4 rounded-pill mx-auto mb-3"
+              >المزيد</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- USA (again) -->
+      <div
+        class="mx-2 destination-card"
+        style="min-width: 280px; max-width: 280px; transition: all 0.5s ease"
+      >
+        <div class="blog-item position-relative">
+          <div class="overflow-hidden rounded" style="height: 400px">
+            <img
+              src="../static/img/UNITOPIA_Images/usa.png"
+              class="img-fluid w-100 h-100"
+              alt=""
+              style="object-fit: cover"
+            />
+          </div>
+          <!-- Flag image -->
+          <div
+            class="position-absolute"
+            style="top: 10px; left: 10px; z-index: 10"
+          >
+            <img
+              src="../static/img/UNITOPIA_Images/us-flag.png"
+              class="img-fluid rounded"
+              alt="علم الدولة"
+              style="
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border: 2px solid white;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+              "
+            />
+          </div>
+          <div
+            class="blog-content mx-4 d-flex flex-column align-items-center rounded bg-light"
+          >
+            <div class="text-white bg-primary-dark rounded mb-3 w-100">
+              <div
+                class="h-100 p-3 d-flex flex-column justify-content-center text-center"
+              >
+                <p class="fw-bold mb-0">الولايات المتحدة</p>
+              </div>
+            </div>
+            <a
+              href="/contact-ar"
+              class="btn btn-primary py-2 px-4 rounded-pill mx-auto mb-3"
+              >المزيد</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Spain (again) -->
+      <div
+        class="mx-2 destination-card"
+        style="min-width: 280px; max-width: 280px; transition: all 0.5s ease"
+      >
+        <div class="blog-item position-relative">
+          <div class="overflow-hidden rounded" style="height: 400px">
+            <img
+              src="../static/img/UNITOPIA_Images/spain.png"
+              class="img-fluid w-100 h-100"
+              alt=""
+              style="object-fit: cover"
+            />
+          </div>
+          <!-- Flag image -->
+          <div
+            class="position-absolute"
+            style="top: 10px; left: 10px; z-index: 10"
+          >
+            <img
+              src="../static/img/UNITOPIA_Images/spain-flag.png"
+              class="img-fluid rounded"
+              alt="علم الدولة"
+              style="
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border: 2px solid white;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+              "
+            />
+          </div>
+          <div
+            class="blog-content mx-4 d-flex flex-column align-items-center rounded bg-light"
+          >
+            <div class="text-white bg-primary-dark rounded mb-3 w-100">
+              <div
+                class="h-100 p-3 d-flex flex-column justify-content-center text-center"
+              >
+                <p class="fw-bold mb-0">إسبانيا</p>
+              </div>
+            </div>
+            <a
+              href="/contact-ar"
+              class="btn btn-primary py-2 px-4 rounded-pill mx-auto mb-3"
+              >المزيد</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add this script at the end of your file before the closing body tag -->
+<script>
+  // Keep your JS as is, no translation needed
+</script>
+
+<!-- Menu Start -->
+<div class="container-fluid menu bg-light py-6 my-6" dir="rtl" lang="ar">
+  <div class="container">
+    <div class="text-center wow bounceInUp" data-wow-delay="0.1s"></div>
+    <div class="tab-class text-center">
+      <ul
+        class="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp"
+        data-wow-delay="0.1s"
+      >
+        <li class="nav-item p-2">
+          <a
+            class="d-flex py-2 mx-2 border border-primary bg-white rounded-pill active"
+            data-bs-toggle="pill"
+            href="#tab-10"
+          >
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div id="tab-10" class="tab-pane fade show p-0 active">
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <div class="menu-item d-flex align-items-center">
+                <img
+                  class="flex-shrink-0 img-fluid rounded-circle expert"
+                  src="../static/img/expert.webp"
+                  alt=""
+                  style="width: 100px; height: 100px; object-fit: cover"
+                />
+                <div class="w-100 d-flex flex-column text-end pe-4">
+                  <div
+                    class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                  >
+                    <h4>
+                      تحتاج إلى دعم خبير في التقديمات الجامعية والتأشيرات؟
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="menu-item d-flex align-items-center">
+                <img
+                  class="flex-shrink-0 img-fluid rounded-circle expert"
+                  src="../static/img/journey.png"
+                  alt=""
+                  style="width: 100px; height: 100px; object-fit: cover"
+                />
+                <div class="w-100 d-flex flex-column text-end pe-4">
+                  <div
+                    class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                  >
+                    <h4>هل أنت مستعد لبدء رحلتك إلى الخارج؟</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="menu-item d-flex align-items-center">
+                <img
+                  class="flex-shrink-0 img-fluid rounded-circle expert"
+                  src="../static/img/training.webp"
+                  alt=""
+                  style="width: 100px; height: 100px; object-fit: cover"
+                />
+                <div class="w-100 d-flex flex-column text-end pe-4">
+                  <div
+                    class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                  >
+                    <h4>برامج التدريب</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+              <a
+                href="/contact-ar"
+                class="btn btn-primary py-3 px-5 rounded-pill"
+                >احجز استشارة مجانية<i class="fas fa-arrow-left pe-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Menu End -->
+
+{%include 'ar/footer.html'%}

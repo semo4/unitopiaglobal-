@@ -56,9 +56,13 @@
 
 
     // Testimonial carousel
+    // Detect if the page is in RTL mode (Arabic)
+    var isRTL = $('html').attr('dir') === 'rtl' || $('body').attr('dir') === 'rtl' || document.documentElement.lang === 'ar';
+
     $(".testimonial-carousel-1").owlCarousel({
         loop: true,
         dots: false,
+        rtl: isRTL,
         margin: 25,
         autoplay: true,
         slideTransition: 'linear',
@@ -84,7 +88,7 @@
     $(".testimonial-carousel-2").owlCarousel({
         loop: true,
         dots: false,
-        rtl: true,
+        rtl: isRTL,
         margin: 25,
         autoplay: true,
         slideTransition: 'linear',
@@ -109,31 +113,3 @@
 
 })(jQuery);
 
-
-
-// Fix for RTL Owl Carousel
-$(document).ready(function() {
-    // Initialize testimonial carousel with RTL support
-    $('.testimonial-carousel-1').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        dots: false,
-        rtl: true, // THIS IS THE KEY LINE FOR ARABIC/RTL
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 4
-            }
-        },
-        navText: [
-            '<i class="fa fa-chevron-right"></i>',
-            '<i class="fa fa-chevron-left"></i>'
-        ]
-    });
-});

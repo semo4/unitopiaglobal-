@@ -11,7 +11,7 @@
         <small
           class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-4 animated bounceInDown"
         >
-          مرحبًا بكم في يوني توبيا جلوبال
+          مرحبًا بكم في يونيتوبيا غلوبال
         </small>
         <h1
           class="display-1 mb-4 animated bounceInDown"
@@ -555,7 +555,188 @@ c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"
 </div>
 <!-- Add this script at the end of your file before the closing body tag -->
 <script>
-  // Keep your JS as is, no translation needed
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get the scroll container and buttons
+    const scrollContainer = document.getElementById("destinationsScroll");
+    const scrollLeftBtn = document.getElementById("scrollLeft");
+    const scrollRightBtn = document.getElementById("scrollRight");
+    const playPauseBtn = document.getElementById("playPauseBtn");
+    const playPauseIcon = document.getElementById("playPauseIcon");
+    const cardWidth = 300; // Width of each card + margin
+    let autoScrollInterval;
+    let isPlaying = true;
+
+    // Function to initialize auto-scrolling
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(() => {
+        scrollContainer.scrollBy({
+          left: 1,
+          behavior: "auto",
+        });
+
+        // Check if we've reached the end, if so, reset to beginning
+        if (
+          scrollContainer.scrollLeft >=
+          scrollContainer.scrollWidth - scrollContainer.clientWidth - 10
+        ) {
+          scrollContainer.scrollTo({
+            left: 0,
+            behavior: "auto",
+          });
+        }
+      }, 20); // Smooth continuous scrolling
+    }
+
+    // Start auto-scrolling initially
+    startAutoScroll();
+
+    // Toggle play/pause
+    playPauseBtn.addEventListener("click", function () {
+      if (isPlaying) {
+        clearInterval(autoScrollInterval);
+        playPauseIcon.classList.remove("fa-pause");
+        playPauseIcon.classList.add("fa-play");
+      } else {
+        startAutoScroll();
+        playPauseIcon.classList.remove("fa-play");
+        playPauseIcon.classList.add("fa-pause");
+      }
+      isPlaying = !isPlaying;
+    });
+
+    // Add event listeners for the buttons
+    scrollLeftBtn.addEventListener("click", function () {
+      // Pause auto-scrolling when manually navigating
+      if (isPlaying) {
+        clearInterval(autoScrollInterval);
+        setTimeout(() => {
+          if (isPlaying) startAutoScroll();
+        }, 1000);
+      }
+
+      scrollContainer.scrollBy({
+        left: -cardWidth,
+        behavior: "smooth",
+      });
+    });
+
+    scrollRightBtn.addEventListener("click", function () {
+      // Pause auto-scrolling when manually navigating
+      if (isPlaying) {
+        clearInterval(autoScrollInterval);
+        setTimeout(() => {
+          if (isPlaying) startAutoScroll();
+        }, 1000);
+      }
+
+      scrollContainer.scrollBy({
+        left: cardWidth,
+        behavior: "smooth",
+      });
+    });
+
+    // Add hover effect for cards
+    const destinationCards = document.querySelectorAll(".destination-card");
+    destinationCards.forEach((card) => {
+      card.addEventListener("mouseenter", function () {
+        // Pause scrolling when hovering over a card
+        if (isPlaying) {
+          clearInterval(autoScrollInterval);
+        }
+
+        this.style.transform = "translateY(-10px) scale(1.03)";
+        this.style.boxShadow = "0 10px 20px rgba(0,0,0,0.2)";
+        this.style.zIndex = "1";
+      });
+
+      card.addEventListener("mouseleave", function () {
+        // Resume scrolling when mouse leaves
+        if (isPlaying) {
+          startAutoScroll();
+        }
+
+        this.style.transform = "translateY(0) scale(1)";
+        this.style.boxShadow = "none";
+        this.style.zIndex = "0";
+      });
+    });
+
+    // Pause scrolling when cursor is over the container
+    scrollContainer.addEventListener("mouseenter", function () {
+      if (isPlaying) {
+        clearInterval(autoScrollInterval);
+      }
+    });
+
+    // Resume scrolling when cursor leaves the container
+    scrollContainer.addEventListener("mouseleave", function () {
+      if (isPlaying) {
+        startAutoScroll();
+      }
+    });
+
+    // Add swipe functionality for touch devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    scrollContainer.addEventListener(
+      "touchstart",
+      function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+        // Pause scrolling on touch
+        if (isPlaying) {
+          clearInterval(autoScrollInterval);
+        }
+      },
+      { passive: true }
+    );
+
+    scrollContainer.addEventListener(
+      "touchend",
+      function (e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+
+        // Resume scrolling after touch
+        if (isPlaying) {
+          setTimeout(() => {
+            startAutoScroll();
+          }, 1000);
+        }
+      },
+      { passive: true }
+    );
+
+    function handleSwipe() {
+      if (touchEndX < touchStartX) {
+        // Swiped left
+        scrollContainer.scrollBy({
+          left: cardWidth,
+          behavior: "smooth",
+        });
+      }
+      if (touchEndX > touchStartX) {
+        // Swiped right
+        scrollContainer.scrollBy({
+          left: -cardWidth,
+          behavior: "smooth",
+        });
+      }
+    }
+
+    // Handle visibility change (pause when tab not visible)
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        if (isPlaying) {
+          clearInterval(autoScrollInterval);
+        }
+      } else {
+        if (isPlaying) {
+          startAutoScroll();
+        }
+      }
+    });
+  });
 </script>
 
 <!-- Menu Start -->
